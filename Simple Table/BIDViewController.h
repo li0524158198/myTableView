@@ -10,6 +10,6 @@
 
 @interface BIDViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@property(retain,nonatomic) NSArray *listData;ßß
+@property(retain,nonatomic) NSArray *listData;
 
 @end

@@ -18,6 +18,8 @@
 		11877AFF16FEA2550021A835 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11877AFE16FEA2550021A835 /* Default-568h@2x.png */; };
 		11877B0216FEA2550021A835 /* BIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11877B0116FEA2550021A835 /* BIDViewController.m */; };
 		11877B0516FEA2550021A835 /* BIDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11877B0316FEA2550021A835 /* BIDViewController.xib */; };
+		118E46BE1701EB3700B7D050 /* star2.png in Resources */ = {isa = PBXBuildFile; fileRef = 118E46BC1701EB3700B7D050 /* star2.png */; };
+		118E46BF1701EB3700B7D050 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 118E46BD1701EB3700B7D050 /* star.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		11877B0016FEA2550021A835 /* BIDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BIDViewController.h; sourceTree = "<group>"; };
 		11877B0116FEA2550021A835 /* BIDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BIDViewController.m; sourceTree = "<group>"; };
 		11877B0416FEA2550021A835 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BIDViewController.xib; sourceTree = "<group>"; };
+		118E46BC1701EB3700B7D050 /* star2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star2.png; sourceTree = "<group>"; };
+		118E46BD1701EB3700B7D050 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 		11877AEF16FEA2550021A835 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				118E46BC1701EB3700B7D050 /* star2.png */,
+				118E46BD1701EB3700B7D050 /* star.png */,
 				11877AF016FEA2550021A835 /* Simple Table-Info.plist */,
 				11877AF116FEA2550021A835 /* InfoPlist.strings */,
 				11877AF416FEA2550021A835 /* main.m */,
@@ -164,6 +170,8 @@
 				11877AFD16FEA2550021A835 /* Default@2x.png in Resources */,
 				11877AFF16FEA2550021A835 /* Default-568h@2x.png in Resources */,
 				11877B0516FEA2550021A835 /* BIDViewController.xib in Resources */,
+				118E46BE1701EB3700B7D050 /* star2.png in Resources */,
+				118E46BF1701EB3700B7D050 /* star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +299,7 @@
 				11877B0A16FEA2550021A835 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
