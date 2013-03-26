@@ -46,15 +46,26 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleTableIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SimpleTableIdentifier];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2
+                                     reuseIdentifier:SimpleTableIdentifier];
     }
+
     
-    NSUInteger row = [indexPath row];
-    cell.textLabel.text = [listData objectAtIndex:row];
     
     UIImage *image = [UIImage imageNamed:@"star.png"];
     cell.imageView.image = image;
+
+    NSUInteger row = [indexPath row];
+    cell.textLabel.text = [listData objectAtIndex:row];
 //    cell.imageView.highlighted = YES;
+    
+    if (row < 2) {
+        cell.detailTextLabel.text = @"sss";
+    }
+    else
+    {
+        cell.detailTextLabel.text = @"dddd" ;
+    }
     return cell;
 }
 
