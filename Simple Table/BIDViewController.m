@@ -46,7 +46,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleTableIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1
                                      reuseIdentifier:SimpleTableIdentifier];
     }
 
@@ -57,6 +57,7 @@
 
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [listData objectAtIndex:row];
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:50];
 //    cell.imageView.highlighted = YES;
     
     if (row < 2) {
@@ -69,5 +70,58 @@
     return cell;
 }
 
+#pragma mark-
+#pragma mark Table Delegate Methods
+
+- (NSInteger) tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger row = [indexPath row];
+    return row;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger row = [indexPath row];
+    if (row == 0) {
+        return nil;
+    }
+    
+    return indexPath;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger row = [indexPath row];
+    NSString *rowValue = [listData objectAtIndex:row];
+    NSString *message = [[NSString alloc] initWithFormat:@"You selected %@", rowValue];
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Row Selected"
+                          message:message
+                          delegate:nil
+                          cancelButtonTitle:@"Yes, I did"
+                          otherButtonTitles:nil];
+    
+    [alert show];
+    [alert release];
+     
+//     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
+}
+
+
 
 @end
+
+
+
+
+
+
+
+
+
