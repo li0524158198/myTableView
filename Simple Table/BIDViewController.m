@@ -7,6 +7,7 @@
 //
 
 #import "BIDViewController.h"
+#import "BIDNameAndColorCell.h"
 
 
 @interface BIDViewController ()
@@ -15,6 +16,7 @@
 
 @implementation BIDViewController
 @synthesize listData;
+@synthesize computers;
 
 - (void)viewDidLoad
 {
@@ -22,7 +24,20 @@
 	// Do any additional setup after loading the view, typically from a nib.
     NSArray *array = [[NSArray alloc]initWithObjects:@"sleepy",@"sneey",@"bashful", nil];
     self.listData = array;
-    [array release];
+    [array release];    
+    NSDictionary *row1 = [[NSDictionary alloc]initWithObjectsAndKeys:@"MacBook",@"Name",@"White",@"Color", nil];
+    NSDictionary *row2 = [[NSDictionary alloc]initWithObjectsAndKeys:@"MacBook Pro",@"Name",@"Silver",@"Color", nil];
+    NSDictionary *row3 = [[NSDictionary alloc]initWithObjectsAndKeys:@"iMac",@"Name",@"Silver",@"Color", nil];
+    NSDictionary *row4 = [[NSDictionary alloc]initWithObjectsAndKeys:@"Mac Pro",@"Name",@"Silver",@"Color", nil];
+    NSDictionary *row5 = [[NSDictionary alloc]initWithObjectsAndKeys:@"Mac Mini",@"Name",@"Silver",@"Color", nil];
+    self.computers = [[NSArray alloc]initWithObjects:row1,row2,row3,row4,row5, nil];
+
+}
+
+- (void)viewDidUnload
+{
+    self.computers = nil;
+    self.listData = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,38 +52,58 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.listData count];
+//    return [self.listData count];
+    return [self.computers count];
 }
+
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleTableIdentifier];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1
+//                                     reuseIdentifier:SimpleTableIdentifier];
+//    }
+//
+//    
+//    
+//    UIImage *image = [UIImage imageNamed:@"star.png"];
+//    cell.imageView.image = image;
+//
+//    NSUInteger row = [indexPath row];
+//    cell.textLabel.text = [listData objectAtIndex:row];
+//    cell.textLabel.font = [UIFont boldSystemFontOfSize:50];
+//    
+//    if (row < 2) {
+//        cell.detailTextLabel.text = @"sss";
+//    }
+//    else
+//    {
+//        cell.detailTextLabel.text = @"dddd" ;
+//    }
+//    return cell;
+//}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleTableIdentifier];
+   static NSString *CellTableIdentifier = @"CellTableIdentifier";
+    BIDNameAndColorCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1
-                                     reuseIdentifier:SimpleTableIdentifier];
+        cell = [[BIDNameAndColorCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellTableIdentifier];
     }
-
     
-    
-    UIImage *image = [UIImage imageNamed:@"star.png"];
-    cell.imageView.image = image;
-
     NSUInteger row = [indexPath row];
-    cell.textLabel.text = [listData objectAtIndex:row];
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:50];
-//    cell.imageView.highlighted = YES;
+    NSDictionary *rowData = [self.computers objectAtIndex:row];
     
-    if (row < 2) {
-        cell.detailTextLabel.text = @"sss";
-    }
-    else
-    {
-        cell.detailTextLabel.text = @"dddd" ;
-    }
+    cell.name = [rowData objectForKey:@"Name"];
+    cell.color = [rowData objectForKey:@"Color"];
+    
     return cell;
 }
+
 
 #pragma mark-
 #pragma mark Table Delegate Methods
