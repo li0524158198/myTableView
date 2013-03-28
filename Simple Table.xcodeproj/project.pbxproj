@@ -21,6 +21,7 @@
 		118E46BE1701EB3700B7D050 /* star2.png in Resources */ = {isa = PBXBuildFile; fileRef = 118E46BC1701EB3700B7D050 /* star2.png */; };
 		118E46BF1701EB3700B7D050 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 118E46BD1701EB3700B7D050 /* star.png */; };
 		11A9DCF21703404C00AFFC4C /* BIDNameAndColorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A9DCF11703404C00AFFC4C /* BIDNameAndColorCell.m */; };
+		11AAF21417048BDD000EA5BB /* BIDNameAndColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11AAF21317048BDD000EA5BB /* BIDNameAndColorCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		118E46BD1701EB3700B7D050 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		11A9DCF01703404C00AFFC4C /* BIDNameAndColorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIDNameAndColorCell.h; sourceTree = "<group>"; };
 		11A9DCF11703404C00AFFC4C /* BIDNameAndColorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIDNameAndColorCell.m; sourceTree = "<group>"; };
+		11AAF21317048BDD000EA5BB /* BIDNameAndColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BIDNameAndColorCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				11877AEF16FEA2550021A835 /* Supporting Files */,
 				11A9DCF01703404C00AFFC4C /* BIDNameAndColorCell.h */,
 				11A9DCF11703404C00AFFC4C /* BIDNameAndColorCell.m */,
+				11AAF21317048BDD000EA5BB /* BIDNameAndColorCell.xib */,
 			);
 			path = "Simple Table";
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				11877B0516FEA2550021A835 /* BIDViewController.xib in Resources */,
 				118E46BE1701EB3700B7D050 /* star2.png in Resources */,
 				118E46BF1701EB3700B7D050 /* star.png in Resources */,
+				11AAF21417048BDD000EA5BB /* BIDNameAndColorCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

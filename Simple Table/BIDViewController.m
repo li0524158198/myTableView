@@ -87,21 +87,46 @@
 //}
 
 
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//   static NSString *CellTableIdentifier = @"CellTableIdentifier";
+//    BIDNameAndColorCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+//    if (cell == nil) {
+//        cell = [[BIDNameAndColorCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellTableIdentifier];
+//    }
+//    
+//    NSUInteger row = [indexPath row];
+//    NSDictionary *rowData = [self.computers objectAtIndex:row];
+//    
+//    cell.name = [rowData objectForKey:@"Name"];
+//    cell.color = [rowData objectForKey:@"Color"];
+//    
+//    return cell;
+//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   static NSString *CellTableIdentifier = @"CellTableIdentifier";
-    BIDNameAndColorCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
-    if (cell == nil) {
-        cell = [[BIDNameAndColorCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellTableIdentifier];
+    static NSString *CellTableIdentifier = @"CellTableIdentifier";
+    static BOOL nibsRegistered = NO;
+    if (nibsRegistered) {
+        UINib *nib = [UINib nibWithNibName:@"BIDNameAndColorCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:CellTableIdentifier];
+        nibsRegistered = YES;
     }
+    
+    BIDNameAndColorCell *cell = [tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
     
     NSUInteger row = [indexPath row];
     NSDictionary *rowData = [self.computers objectAtIndex:row];
     
     cell.name = [rowData objectForKey:@"Name"];
     cell.color = [rowData objectForKey:@"Color"];
-    
-    return cell;
+    return  cell;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 65.0;
 }
 
 
